@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MrPewiOS - Portfolio</title>
+    <style>
+        :root {
+            --primary: #00ff9d;
+            --bg: #0a0a0a;
+            --card: #1a1a1a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+            position: relative;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+        .hero-content .highlight { color: var(--primary); }
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: #000;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,255,157,0.3); }
+
+        section {
+            padding: 100px 5%;
+        }
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+        .about {
+            background: var(--card);
+        }
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .skill-card {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .skill-card:hover { transform: translateY(-10px); }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: var(--card);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .project-card:hover { transform: scale(1.03); }
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .project-info {
+            padding: 20px;
+        }
+        .project-info h3 { margin-bottom: 10px; color: var(--primary); }
+
+        .contact {
+            text-align: center;
+            background: var(--card);
+        }
+        .social-links a {
+            font-size: 2rem;
+            margin: 0 15px;
+            color: #ccc;
+            transition: 0.3s;
+        }
+        .social-links a:hover { color: var(--primary); }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #000;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.8rem; }
+            .nav-links { display: none; } /* Có thể thêm menu mobile sau */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">MrPewiOS</div>
+        <div class="nav-links">
+            <a href="#about">Về tôi</a>
+            <a href="#skills">Kỹ năng</a>
+            <a href="#projects">Dự án</a>
+            <a href="#contact">Liên hệ</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Xin chào, tôi là <span class="highlight">MrPewiOS</span></h1>
+            <p>Developer | iOS Enthusiast | Creator of cool things</p>
+            <a href="#projects" class="btn">Xem dự án của tôi</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <h2>Về tôi</h2>
+        <p>
+            Tôi là một developer đam mê công nghệ, đặc biệt là iOS development và web. 
+            Tôi thích tạo ra những sản phẩm đẹp, mượt mà và mang lại giá trị thực sự cho người dùng. 
+            Hiện đang học hỏi và xây dựng nhiều dự án cá nhân trên GitHub.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2>Kỹ năng</h2>
+        <div class="skills">
+            <div class="skill-card">
+                <h3>Frontend</h3>
+                <p>HTML, CSS, JavaScript, React</p>
+            </div>
+            <div class="skill-card">
+                <h3>iOS Development</h3>
+                <p>Swift, SwiftUI, UIKit</p>
+            </div>
+            <div class="skill-card">
+                <h3>Tools & Others</h3>
+                <p>Git, GitHub, Figma, VS Code</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>Dự án nổi bật</h2>
+        <div class="projects">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x300/1a1a1a/00ff9d?text=Project+1" alt="Project 1">
+                <div class="project-info">
+                    <h3>Ứng dụng iOS X</h3>
+                    <p>Một ứng dụng quản lý công việc hiện đại dùng SwiftUI.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x300/1a1a1a/00ff9d?text=Project+2" alt="Project 2">
+                <div class="project-info">
+                    <h3>Website Portfolio</h3>
+                    <p>Trang web cá nhân này được xây dựng bằng HTML/CSS/JS.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x300/1a1a1a/00ff9d?text=Project+3" alt="Project 3">
+                <div class="project-info">
+                    <h3>Dự án thứ 3</h3>
+                    <p>Mô tả ngắn gọn về dự án.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Liên hệ</h2>
+        <p>Hãy kết nối với tôi qua:</p>
+        <div class="social-links">
+            <a href="https://github.com/mrpewios" target="_blank">GitHub</a>
+            <a href="#" target="_blank">Twitter / X</a>
+            <a href="#" target="_blank">Facebook</a>
+        </div>
+        <p style="margin-top: 30px;">Email: example@email.com</p>
+    </section>
+
+    <footer>
+        &copy; 2026 MrPewiOS • Made with ❤️ on GitHub Pages
+    </footer>
+
+    <script>
+        // Smooth scroll cho menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
